@@ -3,6 +3,7 @@ package com.springboot.usermanagementsystemapplication.controller;
 import com.springboot.usermanagementsystemapplication.dto.UserRequestDTO;
 import com.springboot.usermanagementsystemapplication.dto.UserResponseDTO;
 import com.springboot.usermanagementsystemapplication.service.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class UserController {
 
 
     @PostMapping("/createUser")
-    public ResponseEntity<UserResponseDTO> createUser(@RequestBody UserRequestDTO userRequestDTO) {
+    public ResponseEntity<UserResponseDTO> createUser(@Valid @RequestBody UserRequestDTO userRequestDTO) {
         return ResponseEntity.ok(userService.createUser(userRequestDTO));
     }
 
