@@ -2,6 +2,7 @@ package com.springboot.usermanagementsystemapplication.service.impl;
 
 import com.springboot.usermanagementsystemapplication.dto.UserRequestDTO;
 import com.springboot.usermanagementsystemapplication.dto.UserResponseDTO;
+import com.springboot.usermanagementsystemapplication.exception.UserNotFoundException;
 import com.springboot.usermanagementsystemapplication.model.User;
 import com.springboot.usermanagementsystemapplication.repository.UserRepository;
 import com.springboot.usermanagementsystemapplication.service.UserService;
@@ -67,6 +68,6 @@ public class UserServiceImpl implements UserService {
 
         return userRepository.findById(id)
                 .map(user -> modelMapper.map(user, UserResponseDTO.class))  // Entity → DTO
-                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
     }
 }
