@@ -1,5 +1,6 @@
 ✅ Core Spring Boot Modules
 Module	Topic
+
 Module 1  📌 Project Setup + Hello World REST API
 Module 2  📌 Layered Architecture (3-layer)
 Module 3  📌 Bean Lifecycle, IoC/DI, @Component, @Service, @Repository, @Autowired
@@ -16,6 +17,7 @@ Module 13	📌 File Upload & Download API
 
 ✅ Database & JPA Modules
 Module	Topic
+
 Module 14	📌 JPA Relationships (OneToOne, OneToMany, etc.)
 Module 15	📌 Query Methods & @Query with JPQL
 Module 16	📌 Transaction Management with @Transactional
@@ -23,6 +25,7 @@ Module 17	📌 H2 DB + MySQL Integration
 
 ✅ Security, Testing, Monitoring
 Module	Topic
+
 Module 18	📌 Spring Security Basic Auth, JWT
 Module 19	📌 Unit Testing (JUnit5, Mockito, WebMvcTest)
 Module 20	📌 Integration Testing
@@ -31,6 +34,7 @@ Module 22	📌 Spring Boot Admin & Micrometer Metrics
 
 ✅ Microservices & Deployment
 Module	Topic
+
 Module 23	📌 Spring Cloud Eureka Server + Client
 Module 24	📌 API Gateway (Spring Cloud Gateway)
 Module 25	📌 Feign Client & RestTemplate
@@ -41,10 +45,12 @@ Module 29	📌 CI/CD Basics using GitHub Actions
 
 ✅ Bonus / Utility Modules
 Module	Topic
+
 Module 30	📌 Utility Classes (DateUtils, FileUtils, etc.)
 Module 31	📌 Email Sender, Scheduler, Notifications
 Module 32	📌 API Rate Limiting (Bucket4J or Resilience4j)
 
 🔚 Final Module
 Module	Topic
+
 Module 33	✅ Interview Preparation Summary (PDF + Docs + GitHub README Finalization)
