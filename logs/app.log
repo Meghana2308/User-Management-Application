@@ -1,0 +1,88 @@
+2025-07-22T15:18:49.781-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] c.s.u.UserManagementSystemApplication    : Starting UserManagementSystemApplication using Java 22.0.1 with PID 15912 (C:\Users\megha\IdeaProjects\UserManagementSystemApplication\target\classes started by megha in C:\Users\megha\IdeaProjects\UserManagementSystemApplication)
+2025-07-22T15:18:49.781-05:00 DEBUG 15912 --- [UserManagementSystemApplication] [restartedMain] c.s.u.UserManagementSystemApplication    : Running with Spring Boot v3.5.3, Spring v6.2.8
+2025-07-22T15:18:49.781-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] c.s.u.UserManagementSystemApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-07-22T15:18:49.975-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-22T15:18:49.986-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interface.
+2025-07-22T15:18:50.073-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-22T15:18:50.074-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-22T15:18:50.074-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-22T15:18:50.089-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-07-22T15:18:50.089-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 306 ms
+2025-07-22T15:18:50.117-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-22T15:18:50.119-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-22T15:18:50.125-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-22T15:18:50.126-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Starting...
+2025-07-22T15:18:50.140-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-25 - Added connection com.mysql.cj.jdbc.ConnectionImpl@27901685
+2025-07-22T15:18:50.140-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Start completed.
+2025-07-22T15:18:50.140-05:00  WARN 15912 --- [UserManagementSystemApplication] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-22T15:18:50.140-05:00  WARN 15912 --- [UserManagementSystemApplication] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-07-22T15:18:50.140-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-25)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-22T15:18:50.169-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-22T15:18:50.176-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-22T15:18:50.245-05:00  WARN 15912 --- [UserManagementSystemApplication] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-22T15:18:50.343-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-22T15:18:50.360-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-22T15:18:50.365-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] c.s.u.UserManagementSystemApplication    : Started UserManagementSystemApplication in 0.654 seconds (process running for 1588.383)
+2025-07-22T15:18:50.366-05:00  INFO 15912 --- [UserManagementSystemApplication] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-07-22T15:21:27.011-05:00  INFO 15912 --- [UserManagementSystemApplication] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-22T15:21:27.013-05:00  INFO 15912 --- [UserManagementSystemApplication] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-22T15:21:27.015-05:00  INFO 15912 --- [UserManagementSystemApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-22T15:21:27.015-05:00  INFO 15912 --- [UserManagementSystemApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Shutdown initiated...
+2025-07-22T15:21:27.018-05:00  INFO 15912 --- [UserManagementSystemApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Shutdown completed.
+2025-07-22T15:21:30.720-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] c.s.u.UserManagementSystemApplication    : Starting UserManagementSystemApplication using Java 22.0.1 with PID 9276 (C:\Users\megha\IdeaProjects\UserManagementSystemApplication\target\classes started by megha in C:\Users\megha\IdeaProjects\UserManagementSystemApplication)
+2025-07-22T15:21:30.722-05:00 DEBUG 9276 --- [UserManagementSystemApplication] [restartedMain] c.s.u.UserManagementSystemApplication    : Running with Spring Boot v3.5.3, Spring v6.2.8
+2025-07-22T15:21:30.723-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] c.s.u.UserManagementSystemApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-07-22T15:21:30.767-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-22T15:21:30.767-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-22T15:21:31.385-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-22T15:21:31.432-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interface.
+2025-07-22T15:21:31.880-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-22T15:21:31.890-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-22T15:21:31.890-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-22T15:21:31.924-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-22T15:21:31.924-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1156 ms
+2025-07-22T15:21:32.045-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-22T15:21:32.090-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.18.Final
+2025-07-22T15:21:32.125-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-22T15:21:32.369-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-22T15:21:32.402-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-22T15:21:32.671-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@52e1848c
+2025-07-22T15:21:32.673-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-22T15:21:32.713-05:00  WARN 9276 --- [UserManagementSystemApplication] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-22T15:21:32.714-05:00  WARN 9276 --- [UserManagementSystemApplication] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-07-22T15:21:32.727-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-22T15:21:33.418-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-22T15:21:33.473-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-22T15:21:33.665-05:00  WARN 9276 --- [UserManagementSystemApplication] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-22T15:21:33.979-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-22T15:21:34.014-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-22T15:21:34.029-05:00  INFO 9276 --- [UserManagementSystemApplication] [restartedMain] c.s.u.UserManagementSystemApplication    : Started UserManagementSystemApplication in 3.849 seconds (process running for 4.567)
+2025-07-22T15:22:29.497-05:00  INFO 9276 --- [UserManagementSystemApplication] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-22T15:22:29.497-05:00  INFO 9276 --- [UserManagementSystemApplication] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-22T15:22:29.500-05:00  INFO 9276 --- [UserManagementSystemApplication] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-07-22T15:22:29.562-05:00  INFO 9276 --- [UserManagementSystemApplication] [http-nio-8080-exec-1] c.s.u.controller.UserController          : Fetching user by ID: 7
+2025-07-22T15:22:29.563-05:00  INFO 9276 --- [UserManagementSystemApplication] [http-nio-8080-exec-1] c.s.u.service.impl.UserServiceImpl       : Fetching user by ID: 7
+2025-07-22T15:22:29.661-05:00  WARN 9276 --- [UserManagementSystemApplication] [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.springboot.usermanagementsystemapplication.exception.UserNotFoundException: User not found with id: 7]
+2025-07-22T15:22:29.680-05:00  WARN 9276 --- [UserManagementSystemApplication] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-22T15:22:36.004-05:00  INFO 9276 --- [UserManagementSystemApplication] [http-nio-8080-exec-3] c.s.u.controller.UserController          : Fetching user by ID: 1
+2025-07-22T15:22:36.004-05:00  INFO 9276 --- [UserManagementSystemApplication] [http-nio-8080-exec-3] c.s.u.service.impl.UserServiceImpl       : Fetching user by ID: 1
+2025-07-22T15:22:36.137-05:00  WARN 9276 --- [UserManagementSystemApplication] [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2025-07-22T15:24:33.360-05:00  INFO 9276 --- [UserManagementSystemApplication] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-22T15:24:33.365-05:00  INFO 9276 --- [UserManagementSystemApplication] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-07-22T15:24:33.369-05:00  INFO 9276 --- [UserManagementSystemApplication] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-22T15:24:33.372-05:00  INFO 9276 --- [UserManagementSystemApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-07-22T15:24:33.378-05:00  INFO 9276 --- [UserManagementSystemApplication] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

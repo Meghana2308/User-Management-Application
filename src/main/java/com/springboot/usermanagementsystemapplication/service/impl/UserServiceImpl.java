@@ -7,6 +7,7 @@ import com.springboot.usermanagementsystemapplication.model.User;
 import com.springboot.usermanagementsystemapplication.repository.UserRepository;
 import com.springboot.usermanagementsystemapplication.service.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -36,7 +38,7 @@ public class UserServiceImpl implements UserService {
 //                .fullName(saved.getFirstName() + " " + saved.getLastName())
 //                .email(saved.getEmail())
 //                .build();
-
+        log.info("Creating user with email: {}", dto.getEmail());
         User user = modelMapper.map(dto, User.class);  // DTO → Entity
         User savedUser = userRepository.save(user);
         return modelMapper.map(savedUser, UserResponseDTO.class);  // Entity → DTO
@@ -51,6 +53,7 @@ public class UserServiceImpl implements UserService {
 //                        .email(user.getEmail())
 //                        .build())
 //                .collect(Collectors.toList());
+        log.debug("Fetching all users");
         return userRepository.findAll().stream()
                 .map(user -> modelMapper.map(user, UserResponseDTO.class))  // Entity → DTO
                 .collect(Collectors.toList());
@@ -65,7 +68,7 @@ public class UserServiceImpl implements UserService {
 //                        .email(user.getEmail())
 //                        .build())
 //                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
-
+        log.info("Fetching user by ID: {}", id);
         return userRepository.findById(id)
                 .map(user -> modelMapper.map(user, UserResponseDTO.class))  // Entity → DTO
                 .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
