@@ -1,3 +1,4 @@
+✅ Core Spring Boot Modules
 Module	Topic
 Module 1  📌 Project Setup + Hello World REST API
 Module 2  📌 Layered Architecture (3-layer)
