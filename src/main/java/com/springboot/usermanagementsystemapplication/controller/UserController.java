@@ -50,4 +50,9 @@ public class UserController {
         userService.deleteUser(id);
         return ResponseEntity.ok("User deleted successfully!");
     }
+
+    @GetMapping("/ping")
+    public String ping() {
+        return "pong";
+    }
 }
