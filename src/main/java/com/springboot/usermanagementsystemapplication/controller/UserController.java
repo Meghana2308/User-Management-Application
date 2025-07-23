@@ -38,4 +38,16 @@ public class UserController {
         log.info("Fetching user by ID: {}", id);
         return ResponseEntity.ok(userService.getUserById(id));
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<UserResponseDTO> updateUser(@PathVariable Long id, @Valid @RequestBody UserRequestDTO dto) {
+        UserResponseDTO updated = userService.updateUser(id, dto);
+        return ResponseEntity.ok(updated);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
+        return ResponseEntity.ok("User deleted successfully!");
+    }
 }

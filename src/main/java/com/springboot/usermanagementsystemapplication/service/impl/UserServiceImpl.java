@@ -73,4 +73,27 @@ public class UserServiceImpl implements UserService {
                 .map(user -> modelMapper.map(user, UserResponseDTO.class))  // Entity → DTO
                 .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
     }
+
+    @Override
+    public UserResponseDTO updateUser(Long id, UserRequestDTO dto) {
+        User existingUser = userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
+
+//        existingUser.setFirstName(dto.getFirstName());
+//        existingUser.setLastName(dto.getLastName());
+//        existingUser.setEmail(dto.getEmail());
+        // ModelMapper will map only non-id fields (as id is not in DTO)
+        modelMapper.map(dto, existingUser);
+
+        User updatedUser = userRepository.save(existingUser);
+
+        return modelMapper.map(updatedUser, UserResponseDTO.class);
+    }
+
+    @Override
+    public void deleteUser(Long id) {
+        User existingUser = userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
+        userRepository.delete(existingUser);
+    }
 }
