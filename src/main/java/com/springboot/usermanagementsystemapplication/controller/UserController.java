@@ -51,8 +51,4 @@ public class UserController {
         return ResponseEntity.ok("User deleted successfully!");
     }
 
-    @GetMapping("/ping")
-    public String ping() {
-        return "pong";
-    }
 }

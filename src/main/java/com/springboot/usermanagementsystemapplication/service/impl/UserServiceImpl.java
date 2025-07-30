@@ -5,6 +5,7 @@ import com.springboot.usermanagementsystemapplication.dto.UserResponseDTO;
 import com.springboot.usermanagementsystemapplication.exception.UserNotFoundException;
 import com.springboot.usermanagementsystemapplication.model.User;
 import com.springboot.usermanagementsystemapplication.repository.UserRepository;
+import com.springboot.usermanagementsystemapplication.service.EmailService;
 import com.springboot.usermanagementsystemapplication.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +23,7 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
+    private final EmailService emailService;
 
     @Override
     public UserResponseDTO createUser(UserRequestDTO dto) {
@@ -41,6 +43,7 @@ public class UserServiceImpl implements UserService {
         log.info("Creating user with email: {}", dto.getEmail());
         User user = modelMapper.map(dto, User.class);  // DTO → Entity
         User savedUser = userRepository.save(user);
+        emailService.sendWelcomeEmail(user.getEmail());
         return modelMapper.map(savedUser, UserResponseDTO.class);  // Entity → DTO
     }
 

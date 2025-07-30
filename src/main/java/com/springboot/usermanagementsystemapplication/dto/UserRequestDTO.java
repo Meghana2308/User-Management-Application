@@ -12,11 +12,10 @@ import lombok.*;
 public class UserRequestDTO {
 
     @NotBlank(message = "First name is mandatory")
-    @Size(min = 2, max = 30, message = "First name must be between 2 and 30 characters")
+
     private String firstName;
 
     @NotBlank(message = "Last name is mandatory")
-    @Size(min = 2, max = 30, message = "Last name must be between 2 and 30 characters")
     private String lastName;
 
     @NotBlank(message = "Email is mandatory")
@@ -24,7 +23,7 @@ public class UserRequestDTO {
     private String email;
 
     @NotBlank(message = "Password is required")
-    @Size(min = 6, message = "Password must be at least 6 characters")
+
     private String password;
 
 }
