@@ -21,7 +21,7 @@ Module 9	📌 Spring Profiles for Dev, Test, Prod
 
 Module 10	📌 Swagger / OpenAPI integration for REST API docs
 
-Module 11	📌 Spring AOP (Logging, Security, Retry logic)
+Module 11	📌 @async and EmailService – Enable Non-blocking Email Notifications
 
 Module 12	📌 Pagination & Sorting
 
