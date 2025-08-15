@@ -1,5 +1,6 @@
 package com.springboot.usermanagementsystemapplication.service.impl;
 
+import com.springboot.usermanagementsystemapplication.aop.TrackExecutionTime;
 import com.springboot.usermanagementsystemapplication.dto.UserRequestDTO;
 import com.springboot.usermanagementsystemapplication.dto.UserResponseDTO;
 import com.springboot.usermanagementsystemapplication.exception.UserNotFoundException;
@@ -47,6 +48,7 @@ public class UserServiceImpl implements UserService {
         return modelMapper.map(savedUser, UserResponseDTO.class);  // Entity → DTO
     }
 
+    @TrackExecutionTime
     @Override
     public List<UserResponseDTO> getAllUsers() {
 //        return userRepository.findAll().stream()
