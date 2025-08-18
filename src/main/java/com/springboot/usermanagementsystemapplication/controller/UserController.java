@@ -6,6 +6,9 @@ import com.springboot.usermanagementsystemapplication.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,10 +30,17 @@ public class UserController {
         return ResponseEntity.ok(userService.createUser(userRequestDTO));
     }
 
-    @GetMapping("/getAllUsers")
-    public ResponseEntity<List<UserResponseDTO>> getAllUsers() {
-        log.debug("Fetching all users");
-        return ResponseEntity.ok(userService.getAllUsers());
+//    @GetMapping("/getAllUsers")
+//    public ResponseEntity<List<UserResponseDTO>> getAllUsers() {
+//        log.debug("Fetching all users");
+//        return ResponseEntity.ok(userService.getAllUsers());
+//    }
+
+    @GetMapping
+    public ResponseEntity<Page<UserResponseDTO>> getAllUsers(Pageable pageable) {
+        log.info("Fetching users -> page={}, size={}, sort={}",
+                pageable.getPageNumber(), pageable.getPageSize(), pageable.getSort());
+        return ResponseEntity.ok(userService.getAllUsers(pageable));
     }
 
     @GetMapping("/{id}")
@@ -50,5 +60,4 @@ public class UserController {
         userService.deleteUser(id);
         return ResponseEntity.ok("User deleted successfully!");
     }
-
 }

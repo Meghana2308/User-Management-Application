@@ -11,6 +11,8 @@ import com.springboot.usermanagementsystemapplication.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -48,20 +50,29 @@ public class UserServiceImpl implements UserService {
         return modelMapper.map(savedUser, UserResponseDTO.class);  // Entity → DTO
     }
 
+//    @TrackExecutionTime
+//    @Override
+//    public List<UserResponseDTO> getAllUsers() {
+////        return userRepository.findAll().stream()
+////                .map(user -> UserResponseDTO.builder()
+////                        .id(user.getId())
+////                        .fullName(user.getFirstName() + " " + user.getLastName())
+////                        .email(user.getEmail())
+////                        .build())
+////                .collect(Collectors.toList());
+//        log.debug("Fetching all users");
+//        return userRepository.findAll().stream()
+//                .map(user -> modelMapper.map(user, UserResponseDTO.class))  // Entity → DTO
+//                .collect(Collectors.toList());
+//    }
+
     @TrackExecutionTime
     @Override
-    public List<UserResponseDTO> getAllUsers() {
-//        return userRepository.findAll().stream()
-//                .map(user -> UserResponseDTO.builder()
-//                        .id(user.getId())
-//                        .fullName(user.getFirstName() + " " + user.getLastName())
-//                        .email(user.getEmail())
-//                        .build())
-//                .collect(Collectors.toList());
-        log.debug("Fetching all users");
-        return userRepository.findAll().stream()
-                .map(user -> modelMapper.map(user, UserResponseDTO.class))  // Entity → DTO
-                .collect(Collectors.toList());
+    public Page<UserResponseDTO> getAllUsers(Pageable pageable) {
+        log.debug("Fetching users -> page={}, size={}, sort={}",
+                pageable.getPageNumber(), pageable.getPageSize(), pageable.getSort());
+        return userRepository.findAll(pageable)
+                .map(user -> modelMapper.map(user, UserResponseDTO.class));
     }
 
     @Override
@@ -101,4 +112,5 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
         userRepository.delete(existingUser);
     }
+
 }
