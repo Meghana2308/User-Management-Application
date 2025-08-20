@@ -45,6 +45,11 @@ public class UserServiceImpl implements UserService {
 //                .build();
         log.info("Creating user with email: {}", dto.getEmail());
         User user = modelMapper.map(dto, User.class);  // DTO → Entity
+
+        // Important: Maintain bidirectional link
+        if (user.getProfile() != null) {
+            user.getProfile().setUser(user);
+        }
         User savedUser = userRepository.save(user);
         emailService.sendWelcomeEmail(user.getEmail());
         return modelMapper.map(savedUser, UserResponseDTO.class);  // Entity → DTO
