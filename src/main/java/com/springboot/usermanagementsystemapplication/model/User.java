@@ -3,6 +3,9 @@ package com.springboot.usermanagementsystemapplication.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "Users")
 @Data
@@ -22,4 +25,8 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "profile_id")
     private Profile profile;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true,  fetch = FetchType.LAZY)
+    private List<Order> orders = new ArrayList<>();
+
 }

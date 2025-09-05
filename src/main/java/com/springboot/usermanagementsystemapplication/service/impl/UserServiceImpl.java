@@ -1,6 +1,7 @@
 package com.springboot.usermanagementsystemapplication.service.impl;
 
 import com.springboot.usermanagementsystemapplication.aop.TrackExecutionTime;
+import com.springboot.usermanagementsystemapplication.dto.OrderDTO;
 import com.springboot.usermanagementsystemapplication.dto.UserRequestDTO;
 import com.springboot.usermanagementsystemapplication.dto.UserResponseDTO;
 import com.springboot.usermanagementsystemapplication.exception.UserNotFoundException;
@@ -71,29 +72,43 @@ public class UserServiceImpl implements UserService {
 //                .collect(Collectors.toList());
 //    }
 
+@Override
+public UserResponseDTO getUserById(Long id) {
+    log.info("Fetching user by ID: {}", id);
+
+    User user = userRepository.findWithOrdersById(id)
+            .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
+
+    return modelMapper.map(user, UserResponseDTO.class);
+
+}
+
     @TrackExecutionTime
     @Override
     public Page<UserResponseDTO> getAllUsers(Pageable pageable) {
         log.debug("Fetching users -> page={}, size={}, sort={}",
                 pageable.getPageNumber(), pageable.getPageSize(), pageable.getSort());
+
         return userRepository.findAll(pageable)
                 .map(user -> modelMapper.map(user, UserResponseDTO.class));
     }
 
-    @Override
-    public UserResponseDTO getUserById(Long id) {
+//    @Override
+//    public UserResponseDTO getUserById(Long id) {
+////        return userRepository.findById(id)
+////                .map(user -> UserResponseDTO.builder()
+////                        .id(user.getId())
+////                        .fullName(user.getFirstName() + " " + user.getLastName())
+////                        .email(user.getEmail())
+////                        .build())
+////                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+//        log.info("Fetching user by ID: {}", id);
 //        return userRepository.findById(id)
-//                .map(user -> UserResponseDTO.builder()
-//                        .id(user.getId())
-//                        .fullName(user.getFirstName() + " " + user.getLastName())
-//                        .email(user.getEmail())
-//                        .build())
-//                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
-        log.info("Fetching user by ID: {}", id);
-        return userRepository.findById(id)
-                .map(user -> modelMapper.map(user, UserResponseDTO.class))  // Entity → DTO
-                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
-    }
+//                .map(user -> modelMapper.map(user, UserResponseDTO.class))  // Entity → DTO
+//                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
+//    }
+
+
 
     @Override
     public UserResponseDTO updateUser(Long id, UserRequestDTO dto) {

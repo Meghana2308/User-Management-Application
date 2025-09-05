@@ -5,20 +5,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserResponseDTO {
-
+public class OrderDTO {
     private Long id;
-    private String firstName;
-    private String lastName;
-    private String email;
-
-    private ProfileDTO profile;
-
-    private List<OrderDTO> orders;
+    private String product;
+    private double amount;
+    private LocalDateTime orderDate;
 }
