@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.*;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -28,4 +29,5 @@ public class UserRequestDTO {
 
     private ProfileDTO profile;
 
+    private Set<Long> roleIds;
 }

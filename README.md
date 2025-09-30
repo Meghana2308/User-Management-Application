@@ -1,88 +1,88 @@
 ✅ Core Spring Boot Modules
-Module	Topic
 
-Module 1  📌 Project Setup + Hello World REST API
 
-Module 2  📌 Layered Architecture (3-layer)
+Module 1 📌 Project Setup + Hello World REST API
 
-Module 3  📌 Bean Lifecycle, IoC/DI, @Component, @Service, @Repository, @Autowired
+Module 2 📌 Layered Architecture (3-layer)
 
-Module 4	📌 DTO, Entity, Mapper Pattern (ModelMapper/MapStruct)
+Module 3 📌 Bean Lifecycle, IoC/DI, @Component, @Service, @Repository, @Autowired
 
-Module 5	📌 Validation with @Valid, @NotNull, custom validators
+Module 4 📌 DTO, Entity, Mapper Pattern (ModelMapper/MapStruct)
 
-Module 6	📌 Global Exception Handling (@ControllerAdvice, @ExceptionHandler)
+Module 5 📌 Validation with @Valid, @NotNull, custom validators
 
-Module 7	📌 Logging using SLF4J & Logback (log structure for prod)
+Module 6 📌 Global Exception Handling (@ControllerAdvice, @ExceptionHandler)
 
-Module 8	📌 Spring Boot Configuration: application.properties / yml
+Module 7 📌 Logging using SLF4J & Logback (log structure for prod)
 
-Module 9	📌 Spring Profiles for Dev, Test, Prod
+Module 8 📌 Spring Boot Configuration: application.properties / yml
 
-Module 10	📌 Swagger / OpenAPI integration for REST API docs
+Module 9 📌 Spring Profiles for Dev, Test, Prod
 
-Module 11	📌 @async and EmailService – Enable Non-blocking Email Notifications
+Module 10 📌 Swagger / OpenAPI integration for REST API docs
 
-Module 12	📌 Pagination & Sorting
+Module 11 📌 @Async and EmailService – Enable Non-blocking Email Notifications
 
-Module 13	📌 File Upload & Download API
+Module 12 📌 Conditional Email Sending (@ConditionalOnProperty)
 
+Module 13 📌 Custom Request Interceptor for Logging HTTP Requests
+
+Module 14 📌 AOP – @TrackExecutionTime annotation for method execution time logging
+
+Module 15 📌 Pagination & Sorting
+
+Module 16 📌 File Upload & Download API
 
 ✅ Database & JPA Modules
-Module	Topic
-
-Module 14	📌 JPA Relationships (OneToOne, OneToMany, etc.)
-
-Module 15	📌 Query Methods & @Query with JPQL
-
-Module 16	📌 Transaction Management with @Transactional
-
-Module 17	📌 H2 DB + MySQL Integration
 
 
-✅ Security, Testing, Monitoring
-Module	Topic
+Module 17 📌 One-to-One Relationship (User ↔ Profile)
 
-Module 18	📌 Spring Security Basic Auth, JWT
+Module 18 📌 One-to-Many Relationship (User ↔ Orders)
 
-Module 19	📌 Unit Testing (JUnit5, Mockito, WebMvcTest)
+Module 19 📌 Many-to-Many Relationship (User ↔ Roles) 
 
-Module 20	📌 Integration Testing
+Module 20 📌 Query Methods & @Query with JPQL
 
-Module 21	📌 Spring Boot Actuator for Monitoring
+Module 21 📌 Transaction Management with @Transactional
 
-Module 22	📌 Spring Boot Admin & Micrometer Metrics
+Module 22 📌 H2 DB + MySQL Integration
+
+✅ Security, Testing, Monitoring Modules
 
 
-✅ Microservices & Deployment
-Module	Topic
+Module 23 📌 Spring Security – Advanced (JWT, Role-Based Access Control, Permissions)
 
-Module 23	📌 Spring Cloud Eureka Server + Client
+Module 24 📌 Unit Testing (JUnit5, Mockito, WebMvcTest)
 
-Module 24	📌 API Gateway (Spring Cloud Gateway)
+Module 25 📌 Integration Testing
 
-Module 25	📌 Feign Client & RestTemplate
+Module 26 📌 Spring Boot Actuator for Monitoring
 
-Module 26	📌 Circuit Breaker (Resilience4j)
+Module 27 📌 Spring Boot Admin & Micrometer Metrics
 
-Module 27	📌 Dockerize Spring Boot App
+✅ Microservices & Deployment Modules
 
-Module 28	📌 Deploy to AWS / EC2 / Render / Railway
 
-Module 29	📌 CI/CD Basics using GitHub Actions
+Module 28 📌 Spring Cloud Eureka Server + Client
 
+Module 29 📌 API Gateway (Spring Cloud Gateway)
+
+Module 30 📌 Feign Client & RestTemplate
+
+Module 31 📌 Circuit Breaker (Resilience4j)
+
+Module 32 📌 Dockerize Spring Boot App
+
+Module 33 📌 Deploy to AWS / EC2 / Render / Railway
+
+Module 34 📌 CI/CD Basics using GitHub Actions
 
 ✅ Bonus / Utility Modules
-Module	Topic
-
-Module 30	📌 Utility Classes (DateUtils, FileUtils, etc.)
-
-Module 31	📌 Email Sender, Scheduler, Notifications
-
-Module 32	📌 API Rate Limiting (Bucket4J or Resilience4j)
 
 
-🔚 Final Module
-Module	Topic
+Module 35 📌 Utility Classes (DateUtils, FileUtils, etc.)
 
-Module 33	✅ Interview Preparation Summary (PDF + Docs + GitHub README Finalization)
+Module 36 📌 Email Sender, Scheduler, Notifications
+
+Module 37 📌 API Rate Limiting (Bucket4J or Resilience4j)

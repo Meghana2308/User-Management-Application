@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -21,4 +22,6 @@ public class UserResponseDTO {
     private ProfileDTO profile;
 
     private List<OrderDTO> orders;
+
+    private Set<RoleDTO> roles;
 }

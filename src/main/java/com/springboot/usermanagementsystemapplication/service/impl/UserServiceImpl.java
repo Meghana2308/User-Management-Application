@@ -5,9 +5,11 @@ import com.springboot.usermanagementsystemapplication.dto.OrderDTO;
 import com.springboot.usermanagementsystemapplication.dto.UserRequestDTO;
 import com.springboot.usermanagementsystemapplication.dto.UserResponseDTO;
 import com.springboot.usermanagementsystemapplication.exception.UserNotFoundException;
+import com.springboot.usermanagementsystemapplication.model.Role;
 import com.springboot.usermanagementsystemapplication.model.User;
 import com.springboot.usermanagementsystemapplication.repository.UserRepository;
 import com.springboot.usermanagementsystemapplication.service.EmailService;
+import com.springboot.usermanagementsystemapplication.service.RoleService;
 import com.springboot.usermanagementsystemapplication.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +19,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 
@@ -28,9 +31,10 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
     private final EmailService emailService;
+    private final RoleService roleService;
 
     @Override
-    public UserResponseDTO createUser(UserRequestDTO dto) {
+    public UserResponseDTO createUser(UserRequestDTO userRequestDTO) {
 //        User user = User.builder()
 //                .firstName(dto.getFirstName())
 //                .lastName(dto.getLastName())
@@ -44,44 +48,59 @@ public class UserServiceImpl implements UserService {
 //                .fullName(saved.getFirstName() + " " + saved.getLastName())
 //                .email(saved.getEmail())
 //                .build();
-        log.info("Creating user with email: {}", dto.getEmail());
-        User user = modelMapper.map(dto, User.class);  // DTO → Entity
+        log.info("Creating user with email: {}", userRequestDTO.getEmail());
+        User user = modelMapper.map(userRequestDTO, User.class);  // DTO → Entity
 
-        // Important: Maintain bidirectional link
+        //  Maintain bidirectional Profile ↔ User link
         if (user.getProfile() != null) {
             user.getProfile().setUser(user);
         }
+
+        //  Handle Many-to-Many: Fetch roles from IDs
+
+        if (userRequestDTO.getRoleIds() != null && !userRequestDTO.getRoleIds().isEmpty()) {
+            Set<Role> roles = userRequestDTO.getRoleIds()
+                    .stream()
+                    .map(roleService::getRoleEntityById)
+                    .collect(Collectors.toSet());
+            user.setRoles(roles);
+        }
+
+
         User savedUser = userRepository.save(user);
         emailService.sendWelcomeEmail(user.getEmail());
-        return modelMapper.map(savedUser, UserResponseDTO.class);  // Entity → DTO
+
+        return modelMapper.map(savedUser, UserResponseDTO.class);
     }
+
+
 
 //    @TrackExecutionTime
 //    @Override
 //    public List<UserResponseDTO> getAllUsers() {
-////        return userRepository.findAll().stream()
-////                .map(user -> UserResponseDTO.builder()
-////                        .id(user.getId())
-////                        .fullName(user.getFirstName() + " " + user.getLastName())
-////                        .email(user.getEmail())
-////                        .build())
-////                .collect(Collectors.toList());
+    ////        return userRepository.findAll().stream()
+    ////                .map(user -> UserResponseDTO.builder()
+    ////                        .id(user.getId())
+    ////                        .fullName(user.getFirstName() + " " + user.getLastName())
+    ////                        .email(user.getEmail())
+    ////                        .build())
+    ////                .collect(Collectors.toList());
 //        log.debug("Fetching all users");
 //        return userRepository.findAll().stream()
 //                .map(user -> modelMapper.map(user, UserResponseDTO.class))  // Entity → DTO
 //                .collect(Collectors.toList());
 //    }
 
-@Override
-public UserResponseDTO getUserById(Long id) {
-    log.info("Fetching user by ID: {}", id);
+    @Override
+    public UserResponseDTO getUserById(Long id) {
+        log.info("Fetching user by ID: {}", id);
 
-    User user = userRepository.findWithOrdersById(id)
-            .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
+        User user = userRepository.findWithOrdersById(id)
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
 
-    return modelMapper.map(user, UserResponseDTO.class);
+        return modelMapper.map(user, UserResponseDTO.class);
 
-}
+    }
 
     @TrackExecutionTime
     @Override
@@ -95,13 +114,13 @@ public UserResponseDTO getUserById(Long id) {
 
 //    @Override
 //    public UserResponseDTO getUserById(Long id) {
-////        return userRepository.findById(id)
-////                .map(user -> UserResponseDTO.builder()
-////                        .id(user.getId())
-////                        .fullName(user.getFirstName() + " " + user.getLastName())
-////                        .email(user.getEmail())
-////                        .build())
-////                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+    ////        return userRepository.findById(id)
+    ////                .map(user -> UserResponseDTO.builder()
+    ////                        .id(user.getId())
+    ////                        .fullName(user.getFirstName() + " " + user.getLastName())
+    ////                        .email(user.getEmail())
+    ////                        .build())
+    ////                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
 //        log.info("Fetching user by ID: {}", id);
 //        return userRepository.findById(id)
 //                .map(user -> modelMapper.map(user, UserResponseDTO.class))  // Entity → DTO
